@@ -77,8 +77,8 @@ isActive = systemApi.active(key)
 if isActive:
     greenlog(actived)
     print('Recuerde volver activar Windows defender\n')
-    _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa.')
-    if _input != '':
+    _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa. ')
+    if _input == 'm':
         menu()
     else:
         exit()

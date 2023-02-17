@@ -2,6 +2,7 @@ import ctypes
 import os
 import subprocess
 from errors import WrongOs
+from colorsLog import *
 
 def checkAdmin():
     if os.name == 'nt':
@@ -32,6 +33,25 @@ def winVersion():
     output = subprocess.check_output(["powershell", "-Command", script_str], input=None, stderr=subprocess.STDOUT)
     outputStr = output.decode("utf-8")
     return outputStr
+
+def active(key):
+    try:
+        log('Borrando clave actual...')
+        subprocess.call('slmgr.vbs -upk', shell=True)
+
+        greenlog('Instalando clave de producto...')
+        script_str = 'slmgr /ipk ' + key
+        subprocess.call(script_str, shell=True)
+
+        log('Estableciendo conección con el servidor KMS (kms.digiboy.ir)...')
+        subprocess.call('slmgr /skms kms.digiboy.ir', shell=True)
+
+        log('Activando windows con clave y servidor KMS')
+        subprocess.call('slmgr /ato', shell=True)
+        return True
+    except:
+        return False
+        
 
 def clear():
     os.system ("cls")

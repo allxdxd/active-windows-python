@@ -1,27 +1,50 @@
 versions = {
 'Microsoft Windows 11 Home': ['TX9XD-98N7V-6WMQ6-BX7FG-H8Q99'],
+
 'Microsoft Windows 11 Home Single Lenguage': ['7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH'],
+
 'Microsoft Windows 11 Pro': ['W269N-WFGWX-YVC9B-4J6C9-T83GX'],
+
 'Microsoft Windows 11 Pro N': ['MH37W-N47XK-V7XM9-C7227-GCQG9'],
+
 'Microsoft Windows 11 Education': ['NW6C2-QMPVW-D7KKK-3GKT6-VCFB2'],
+
 'Microsoft Windows 11 Education N': ['2WH4N-8QGBV-H22JP-CT43Q-MDWWJ'],
+
 'Microsoft Windows 11 Enterprise': ['NPPR9-FWDCX-D2C8J-H872K-2YT43'],
+
 'Microsoft Windows 11 Enterprise N': ['DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4'],
+
 'Microsoft Windows 11 Enterprise G': ['YYVX9-NTFWV-6MDM3-9PT4T-4M68B'],
+
 'Microsoft Windows 11 Enterprise G N': ['44RPN-FTY23-9VTTB-MP9BX-T84FV'],
+
 'Microsoft Windows 11 Workstations': ['NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J'],
+
 'Microsoft Windows 11 Ultimate': ['Q269N-WFGWX-YVC9B-4J6C9-T83GX'],
+
 'Microsoft Windows 10 Home': ['TX9XD-98N7V-6WMQ6-BX7FG-H8Q99'],
+
 'Microsoft Windows 10 Home Single Lenguage': ['7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH'],
+
 'Microsoft Windows 10 Pro': ['W269N-WFGWX-YVC9B-4J6C9-T83GX'],
+
 'Microsoft Windows 10 Pro N': ['MH37W-N47XK-V7XM9-C7227-GCQG9'],
+
 'Microsoft Windows 10 Education': ['NW6C2-QMPVW-D7KKK-3GKT6-VCFB2'],
+
 'Microsoft Windows 10 Education N': ['2WH4N-8QGBV-H22JP-CT43Q-MDWWJ'],
+
 'Microsoft Windows 10 Enterprise': ['NPPR9-FWDCX-D2C8J-H872K-2YT43'],
+
 'Microsoft Windows 10 Enterprise N': ['DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4'],
+
 'Microsoft Windows 10 Enterprise G': ['YYVX9-NTFWV-6MDM3-9PT4T-4M68B'],
+
 'Microsoft Windows 10 Enterprise G N': ['44RPN-FTY23-9VTTB-MP9BX-T84FV'],
+
 'Microsoft Windows 10 Workstations': ['NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J'],
+
 'Microsoft Windows 10 Ultimate': ['Q269N-WFGWX-YVC9B-4J6C9-T83GX'],
 
 'Microsoft Windows 7 Starter': 
@@ -46,7 +69,34 @@ versions = {
 '2V36J-4RK8B-GW27Q-4DXPG-RQP78',
 ],
 
+'Microsoft Windows 7 Professional':[
+'IUYYB-BYYYT-RCVFF-6REEW-MMKPP'
+'LLIIU-HGGYT-TFCXX-ZMMNB-BJGGF',
+'FRRRW-WEQAW-SEDRF-TGUHI-JBIUV',
+'YCTXT-DRSEA-AQ989-9MKNJ-BHBGV',
+],
 
+'Microsoft Windows 7 Home Basic':[
+'22MFQ-HDH7V-RBV79-QMVK9-PTMXQ'
+'D9Y8H-4HW6B-26GDT-2CVPB-CDB9P'
+'239PK-QV6BM-6BX3V-KH2BD-R3VTY'
+'GTM8H-J76KM-G3TWR-MMJ3M-4JVQG'
+'2RDPF-PTCT2-DR237-KD8JY-VH2M7'
+'MB4HF-2Q8V3-W88WR-K7287-2H4CP'
+'2Q4QP-8P4MD-47YBP-7TXX9-FKDRM'
+'6JKV2-QPB8H-RQ893-FW7TM-PBJ73'
+],
+
+'Microsoft Windows 7 Enterprise':[
+'D9RHV-JG8XC-C77H2-3YF6D-RYRJ9'
+'BQ4TH-BWRRY-424Y9-7PQX2-B4WBD'
+'239PK-QV6BM-6BX3V-KH2BD-R3VTY'
+'YDRBP-3D83W-TY26F-D46B2-XCKRJ'
+'CTPG3-H28YT-JP7WD-TTJ3T-RYHKG'
+'RGQ3V-MCMTC-6HP8R-98CDK-VP3FM'
+'MVYTY-QP8R7-6G6WG-87MGT-CRH2P'
+'MZDPH-XCBR3-PFWJG-ZAUCY-DYUYH'
+]
 
 }
 

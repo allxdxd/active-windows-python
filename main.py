@@ -86,3 +86,4 @@ for key in _key:
             exit()
     else:
         errorlog('Un error ha ocurrido en algún punto de la activación.')
+        errorlog('Se volverá a ejecutar la activación con otra clave')

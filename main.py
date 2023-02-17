@@ -1,11 +1,18 @@
 import systemApi
-from colorsLog import errorlog, log, greenlog
+from colorsLog import errorlog, log, greenlog, bluelog
 from errors import NotAdmin
 from art import title
+from activeWin import versions
 
 greenlog(title)
 
-# chequea si es administrador
+# obtener version de windows
+log('Obteniendo version de Windows...')
+winVersion = systemApi.winVersion()
+bluelog(winVersion)
+log('---------------------------------------------')
+
+# chequear si es administrador
 log('Chequeando priviligios...')
 isAdmin = systemApi.checkAdmin()
 if (not(isAdmin)):
@@ -20,10 +27,44 @@ if (not(isAdmin)):
 log('Es administrador: ', ' ')
 greenlog(isAdmin)
 
-# chequea windows defender RTP (real time protection)
-log('Chequeando Windows defender...')
-windowsDefenderStatus = systemApi.checkWinDefender()
-if windowsDefenderStatus:
+# chequear windows defender RTP (real time protection)
+showstatus = True
+if systemApi.checkWinDefender():
+    windowsDefenderStatus = systemApi.checkWinDefender()
+    while windowsDefenderStatus:
+        log('Chequeando Windows defender...')
+        windowsDefenderStatus = systemApi.checkWinDefender()
+        log('Windows defender Real Time Protection: ', ' ')
+        if windowsDefenderStatus:
+            greenlog(windowsDefenderStatus)
+        else:
+            errorlog(windowsDefenderStatus)
+            showstatus = False
+            continue
+        log('---------------------------------------------')
+        errorlog('Windows defender está activado, por favor apaguelo por un momento')
+        res = input('Presione la tecla Enter para volver a escanear')
+
+if showstatus:
+    log('Chequeando Windows defender...')
+    _windowsDefenderStatus = systemApi.checkWinDefender()
     log('Windows defender Real Time Protection: ', ' ')
-    greenlog(windowsDefenderStatus)
-    errorlog('Windows defender está activado')
+    errorlog(_windowsDefenderStatus)
+log('---------------------------------------------')
+
+systemApi.clear()
+greenlog('\nEmpezando activación\n')
+
+log('Edición: ', ' ')
+bluelog(winVersion)
+log('Clave: ', ' ')
+greenlog(versions[winVersion[:-2]])
+
+log('\n|--------------------------------------------------------------------|')
+log('|--------------------------------------------------------------------|')
+log('| A continuación acepte todos los cuadros de dialogos que emergerán. |')
+log('|            si no ve alguno revise en a barra de tareas             |')
+log('|--------------------------------------------------------------------|')
+log('|--------------------------------------------------------------------|')
+
+

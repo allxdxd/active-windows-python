@@ -32,3 +32,6 @@ def winVersion():
     output = subprocess.check_output(["powershell", "-Command", script_str], input=None, stderr=subprocess.STDOUT)
     outputStr = output.decode("utf-8")
     return outputStr
+
+def clear():
+    os.system ("cls")

@@ -25,6 +25,7 @@ def menu():
     2: Ver claves disponibles
     3: Ver detalles del equipo
     4: Activar Office
+    5: Habilitar gpedit
     \n""")
     option = input('Número de la opción: ')
     selection(option)
@@ -44,12 +45,14 @@ def info():
     if op == '0':
         menu()
     if op == '1':
-        systemApi.executeCmdCommand('systeminfo')
+        systemApi.executeCmdCommandExternal('systeminfo')
         info()
     if op == '2':
-        systemApi.executeCmdCommand('ipconfig')
+        systemApi.executeCmdCommandExternal('ipconfig')
     if op == '3':
-        systemApi.executeCmdCommand('netstat')
+        systemApi.executeCmdCommandExternal('netstat')
         info()
+    if op == '4':
+        systemApi.enabledGpedit()
     else:
         info()

@@ -62,25 +62,27 @@ greenlog('\nEmpezando activación\n')
 log('Edición: ', ' ')
 bluelog(winVersion)
 log('Clave: ', ' ')
-key = versions[winVersion[:-2]]
-greenlog(key)
+_key = versions[winVersion[:-2]]
 
-log('\n|--------------------------------------------------------------------|')
-log('|--------------------------------------------------------------------|')
-log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
-log('|           Si no ve alguno revise en la barra de tareas.            |')
-log('|--------------------------------------------------------------------|')
-log('|--------------------------------------------------------------------|\n')
+for key in _key:
+    greenlog(key)
 
-isActive = systemApi.active(key)
+    log('\n|--------------------------------------------------------------------|')
+    log('|--------------------------------------------------------------------|')
+    log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
+    log('|           Si no ve alguno revise en la barra de tareas.            |')
+    log('|--------------------------------------------------------------------|')
+    log('|--------------------------------------------------------------------|\n')
 
-if isActive:
-    greenlog(actived)
-    print('Recuerde volver activar Windows defender\n')
-    _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa. ')
-    if _input == 'm':
-        menu()
+    isActive = systemApi.active(key)
+
+    if isActive:
+        greenlog(actived)
+        print('Recuerde volver activar Windows defender\n')
+        _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa. ')
+        if _input == 'm':
+            menu()
+        else:
+            exit()
     else:
-        exit()
-else:
-    errorlog('Un error ha ocurrido en algún punto de la activación.')
+        errorlog('Un error ha ocurrido en algún punto de la activación.')

@@ -52,8 +52,14 @@ def active(key):
     except:
         return False
         
-def executeCmdCommand(command):
+def executeCmdCommandExternal(command):
     subprocess.call(f'start cmd.exe @cmd /k "{command}"', shell=True)
+
+def executeCmdCommand(command):
+    subprocess.call(command, shell=True)
+
+def enabledGpedit():
+    executeCmdCommandExternal('start gpedit-enabler.bat')
 
 def clear():
     os.system ("cls")

@@ -52,6 +52,8 @@ def active(key):
     except:
         return False
         
+def executeCmdCommand(command):
+    subprocess.call(f'start cmd.exe @cmd /k "{command}"', shell=True)
 
 def clear():
     os.system ("cls")

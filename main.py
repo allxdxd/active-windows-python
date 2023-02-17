@@ -68,7 +68,7 @@ greenlog(key)
 log('\n|--------------------------------------------------------------------|')
 log('|--------------------------------------------------------------------|')
 log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
-log('|           si no ve alguno revise en la barra de tareas             |')
+log('|           Si no ve alguno revise en la barra de tareas.            |')
 log('|--------------------------------------------------------------------|')
 log('|--------------------------------------------------------------------|\n')
 

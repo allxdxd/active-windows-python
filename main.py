@@ -4,6 +4,7 @@ from colorsLog import errorlog, log, greenlog, bluelog
 from errors import NotAdmin
 from art import title, actived
 from activeWin import versions
+from options import menu
 
 greenlog(title)
 
@@ -54,6 +55,7 @@ if showstatus:
 log('---------------------------------------------')
 sleep(2)
 
+# activar
 systemApi.clear()
 greenlog('\nEmpezando activación\n')
 
@@ -65,7 +67,7 @@ greenlog(key)
 
 log('\n|--------------------------------------------------------------------|')
 log('|--------------------------------------------------------------------|')
-log('| A continuación acepte todos los cuadros de dialogos que emergerán. |')
+log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
 log('|           si no ve alguno revise en la barra de tareas             |')
 log('|--------------------------------------------------------------------|')
 log('|--------------------------------------------------------------------|\n')
@@ -74,5 +76,11 @@ isActive = systemApi.active(key)
 
 if isActive:
     greenlog(actived)
+    print('Recuerde volver activar Windows defender\n')
+    _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa.')
+    if _input != '':
+        menu()
+    else:
+        exit()
 else:
     errorlog('Un error ha ocurrido en algún punto de la activación.')

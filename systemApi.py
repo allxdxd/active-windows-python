@@ -46,7 +46,7 @@ def active(key):
         log('Estableciendo conección con el servidor KMS (kms.digiboy.ir)...')
         subprocess.call('slmgr /skms kms.digiboy.ir', shell=True)
 
-        log('Activando windows con clave y servidor KMS')
+        log('Activando windows con clave y servidor KMS...')
         subprocess.call('slmgr /ato', shell=True)
         return True
     except:

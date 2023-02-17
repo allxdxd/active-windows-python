@@ -1,9 +1,7 @@
 import ctypes
 import os
-
-class WrongOs(Exception):
-    def __init__(self, message):
-        self.message = message
+import subprocess
+from errors import WrongOs
 
 def checkAdmin():
     if os.name == 'nt':
@@ -19,9 +17,18 @@ def checkAdmin():
         raise WrongOs('Este Script es solo para Windows')
 
 def checkWinDefender():
-    import subprocess
     script_str = """
     (Get-MpPreference).DisableRealtimeMonitoring
     """
     output = subprocess.check_output(["powershell", "-Command", script_str], input=None, stderr=subprocess.STDOUT)
-    return output.decode("utf-8")
+    ouputStr = output.decode("utf-8")
+    outputBool = not(eval(ouputStr))
+    return outputBool
+
+def winVersion():
+    script_str = """
+    (Get-WmiObject Win32_OperatingSystem).Caption
+    """
+    output = subprocess.check_output(["powershell", "-Command", script_str], input=None, stderr=subprocess.STDOUT)
+    outputStr = output.decode("utf-8")
+    return outputStr

@@ -11,7 +11,7 @@ Este es un activador de Windows programado en Python que te permite activar tu s
 ## Uso con ejecutable
 - Ve a la carpeta Output del repositorio.
 - Descarga el ejecutable.
-- Ejecuta el archivo descargado `como administrador` !importante.
+- Ejecuta el archivo descargado `como administrador`.
 
 ## Uso con Cli
 - Descarga el repositorio de GitHub.

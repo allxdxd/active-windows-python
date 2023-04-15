@@ -8,7 +8,12 @@ Este es un activador de Windows programado en Python que te permite activar tu s
 - Python 3.x instalado en tu sistema
 - Conexión a internet
 
-## Uso
+## Uso con ejecutable
+- Ve a la carpeta Output del repositorio.
+- Descarga el ejecutable.
+- Ejecuta el archivo descargado.
+
+## Uso con ClI
 - Descarga el repositorio de GitHub.
 - Abre una ventana de línea de comandos en el directorio donde se encuentra el archivo `main.py`.
 - Ejecuta el siguiente comando:

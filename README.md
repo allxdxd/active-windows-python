@@ -1,4 +1,4 @@
-## Activador de Windows en Python
+## Activador de Windows en Python 🐍
 
 Este es un activador de Windows programado en Python que te permite activar tu sistema operativo sin necesidad de una clave de producto. La aplicación utiliza un método de activación KMS (Key Management Service) para validar tu copia de Windows y asegurarse de que esté activada correctamente.
 
@@ -8,12 +8,12 @@ Este es un activador de Windows programado en Python que te permite activar tu s
 - Python 3.x instalado en tu sistema
 - Conexión a internet
 
-## Uso con ejecutable
+## Uso con ejecutable 👨‍💻
 - Ve a la carpeta Output del repositorio.
 - Descarga el ejecutable.
 - Ejecuta el archivo descargado `como administrador`.
 
-## Uso con Cli
+## Uso con Cli 🖥
 - Descarga el repositorio de GitHub.
 - Abre una ventana de línea de comandos en el directorio donde se encuentra el archivo `main.py`.
 - Ejecuta el siguiente comando:

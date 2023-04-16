@@ -73,8 +73,8 @@ for key in _key:
     colorsLog.log('|--------------------------------------------------------------------|\n')
 
     isActive = systemApi.active(key)
-    
-    if issubclass:
+
+    if isActive:
         colorsLog.greenlog('La instalación ha sido exitosa.')
     else:
         colorsLog.errorlog('Un error ha ocurrido en algún punto de la activación.')

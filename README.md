@@ -5,7 +5,7 @@ Este es un activador de Windows programado en Python que te permite activar tu s
 ## Requisitos
 - Sistema operativo Windows (7, 8, 8.1, 10)
 - `Antivirus desactivado`
-- Python 3.x instalado en tu sistema
+- Python 3.x instalado en tu sistema (si vas a usarlo como Cli)
 - Conexión a internet
 
 ## Uso con ejecutable 👨‍💻

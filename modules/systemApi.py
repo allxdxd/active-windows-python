@@ -1,8 +1,8 @@
 import ctypes
 import os
 import subprocess
-from errors import WrongOs
-from colorsLog import *
+from modules.errors import WrongOs
+from modules.colorsLog import *
 
 def checkAdmin():
     if os.name == 'nt':

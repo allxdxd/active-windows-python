@@ -1,89 +1,80 @@
-import systemApi
+import modules.systemApi as systemApi
 from time import sleep
-from colorsLog import errorlog, log, greenlog, bluelog
-from errors import NotAdmin
-from art import title, actived
-from activeWin import versions
-from options import menu
+import modules.colorsLog as colorsLog
+import modules.errors as errors
+import modules.art as art
+import modules.activeWin as activeWin
 
-greenlog(title)
+colorsLog.greenlog(art.title)
 
 # obtener version de windows
-log('Obteniendo version de Windows...')
+colorsLog.log('Obteniendo version de Windows...')
 winVersion = systemApi.winVersion()
-bluelog(winVersion)
-log('---------------------------------------------')
+colorsLog.bluelog(winVersion)
+colorsLog.log('---------------------------------------------')
 
 # chequear si es administrador
-log('Chequeando priviligios...')
+colorsLog.log('Chequeando priviligios...')
 isAdmin = systemApi.checkAdmin()
 if (not(isAdmin)):
-    log('Es administrador: ', ' ')
-    errorlog(isAdmin)
-    errorlog('|----------------------------------------------------------------|')
-    errorlog('|----------------------------------------------------------------|')
-    errorlog('|Este programa se debe ejecutar con privilegios de administrador.|')
-    errorlog('|----------------------------------------------------------------|')
-    errorlog('|----------------------------------------------------------------|')
-    raise NotAdmin('You are not admin')
-log('Es administrador: ', ' ')
-greenlog(isAdmin)
+    colorsLog.log('Es administrador: ', ' ')
+    colorsLog.errorlog(isAdmin)
+    colorsLog.errorlog('|----------------------------------------------------------------|')
+    colorsLog.errorlog('|----------------------------------------------------------------|')
+    colorsLog.errorlog('|Este programa se debe ejecutar con privilegios de administrador.|')
+    colorsLog.errorlog('|----------------------------------------------------------------|')
+    colorsLog.errorlog('|----------------------------------------------------------------|')
+    raise errors.NotAdmin('You are not admin')
+colorsLog.log('Es administrador: ', ' ')
+colorsLog.greenlog(isAdmin)
 
 # chequear windows defender RTP (real time protection)
 showstatus = True
 if systemApi.checkWinDefender():
     windowsDefenderStatus = systemApi.checkWinDefender()
     while windowsDefenderStatus:
-        log('Chequeando Windows defender...')
+        colorsLog.log('Chequeando Windows defender...')
         windowsDefenderStatus = systemApi.checkWinDefender()
-        log('Windows defender Real Time Protection: ', ' ')
+        colorsLog.log('Windows defender Real Time Protection: ', ' ')
         if windowsDefenderStatus:
-            greenlog(windowsDefenderStatus)
+            colorsLog.greenlog(windowsDefenderStatus)
         else:
-            errorlog(windowsDefenderStatus)
+            colorsLog.errorlog(windowsDefenderStatus)
             showstatus = False
-            continue
-        log('---------------------------------------------')
-        errorlog('Windows defender está activado, por favor apaguelo por un momento')
+            colorsLog.log('---------------------------------------------')
+        colorsLog.errorlog('Windows defender está activado, por favor apaguelo por un momento')
         res = input('Presione la tecla Enter para volver a escanear')
 
 if showstatus:
-    log('Chequeando Windows defender...')
+    colorsLog.log('Chequeando Windows defender...')
     _windowsDefenderStatus = systemApi.checkWinDefender()
-    log('Windows defender Real Time Protection: ', ' ')
-    errorlog(_windowsDefenderStatus)
-log('---------------------------------------------')
+    colorsLog.log('Windows defender Real Time Protection: ', ' ')
+    colorsLog.errorlog(_windowsDefenderStatus)
+colorsLog.log('---------------------------------------------')
 sleep(2)
 
 # activar
 systemApi.clear()
-greenlog('\nEmpezando activación\n')
+colorsLog.greenlog('\nEmpezando activación\n')
 
-log('Edición: ', ' ')
-bluelog(winVersion)
-log('Clave: ', ' ')
-_key = versions[winVersion[:-2]]
+colorsLog.log('Edición: ', ' ')
+colorsLog.bluelog(winVersion)
+colorsLog.log('Clave: ', ' ')
+_key = activeWin.versions[winVersion[:-2]]
 
 for key in _key:
-    greenlog(key)
+    colorsLog.greenlog(key)
 
-    log('\n|--------------------------------------------------------------------|')
-    log('|--------------------------------------------------------------------|')
-    log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
-    log('|           Si no ve alguno revise en la barra de tareas.            |')
-    log('|--------------------------------------------------------------------|')
-    log('|--------------------------------------------------------------------|\n')
+    colorsLog.log('\n|--------------------------------------------------------------------|')
+    colorsLog.log('|--------------------------------------------------------------------|')
+    colorsLog.log('|   A continuación acepte los 4 cuadros de dialogos que emergerán.   |')
+    colorsLog.log('|           Si no ve alguno revise en la barra de tareas.            |')
+    colorsLog.log('|--------------------------------------------------------------------|')
+    colorsLog.log('|--------------------------------------------------------------------|\n')
 
     isActive = systemApi.active(key)
-
-    if isActive:
-        greenlog(actived)
-        print('Recuerde volver activar Windows defender\n')
-        _input = input('Presione la letra "m" para ver otras opciones o cualquier otra tecla para terminar el programa. ')
-        if _input == 'm':
-            menu()
-        else:
-            exit()
+    if issubclass:
+        colorsLog.greenlog('La instalación ha sido exitosa.')
     else:
-        errorlog('Un error ha ocurrido en algún punto de la activación.')
-        errorlog('Se volverá a ejecutar la activación con otra clave')
+        colorsLog.errorlog('Un error ha ocurrido en algún punto de la activación.')
+        colorsLog.errorlog('Se volverá a ejecutar la activación con otra clave')
